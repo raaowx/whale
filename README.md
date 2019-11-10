@@ -1,17 +1,29 @@
 # Whale
 
 Whale is a repository for store all the Dockerfiles that I'll be creating for different purposes.  
-I'll add to this README a list with:
+I'll add to this README a list with the following information about every Dockerfile:
 - Description
-- Purpose
-- Command line to build the image
-- Command line to run the container
-- Other requeriments
+- Run the container
+- Requeriments
+- Pre-configuration
 
 <img src='./whale.png' width=35>
 
-## Dockerfile list
+**IMPORTANT:** Recommended commands and requeriments list are intended to containers running on MacOS.  
 
+## Dockerfile list
+### Chromium
+**Description:** Image of Ubuntu 18.04 with Chromium browser installed.  
+
+**Run the container:**  
+`docker run -it --cpuset-cpus 0 --memory 1024mb --net host -e DISPLAY=$IP:0 -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/Public/Docker:/home/chromium/Downloads --privileged raaowx/w3browser:chromium`  
+
+**Requeriments:**  
+- XQuartz  
+
+**Pre-Configuration:**  
+- Configure XQuartz to allow connections from network clients
+- Add own IP address to X server with: `xhost +$IP`
 
 ### Licensing
 All files are under the same license.  
