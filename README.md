@@ -16,7 +16,7 @@ I'll add to this README a list with the following information about every Docker
 **Description:** Image of Ubuntu 18.04 with Chromium browser installed.  
 
 **Run the container:**  
-`docker run -it --cpuset-cpus 0 --memory 1024mb --net host -e DISPLAY=$IP:0 -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/Public/Docker:/home/chromium/Downloads --privileged raaowx/w3browser:chromium`  
+`docker run -d --cpuset-cpus 0 --memory 1024mb --net host -e DISPLAY=$IP:0 -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/Docker:/home/chromium/Downloads --name chromium --privileged raaowx/w3browser:chromium`  
 
 **Requeriments:**  
 - XQuartz  
