@@ -10,6 +10,7 @@ All images will be pushed to repositories on my [Docker Hub profile](https://hub
 
 ## Docker Hub Repositories (Subfolders)
 
+* [SWTools](./swtools/README.md)
 * [W3Browser](./w3browser/README.md)
 
 ## Licensing
