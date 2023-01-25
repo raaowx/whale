@@ -6,7 +6,7 @@ LABEL maintainer="Álvaro López de Diego {raaowx} <raaowx@protonmail.com>"
 LABEL version="1.0.0"
 # INSTALL REQUERIMENTS AND CLEANUP
 RUN apt-get update &&\
-    apt-get install -y bat dmsetup libfuse2 nano sudo tree wget &&\
+    apt-get install -y bat dmsetup fd-find libfuse2 nano ripgrep sudo tree wget &&\
     apt-get clean &&\
     rm -rf /var/lib/apt/**/*
 # DOWNLOAD VERACRYPT 1.25.9 AND INSTALL
@@ -20,6 +20,7 @@ RUN case "$(uname -m)" in\
 # SET ALIASES
 RUN echo "# ALIASES #\n\
 alias bat='batcat --paging never'\n\
+alias fd='fdfind'\n\
 alias veracrypt.mount='veracrypt -m nokernelcrypto'\n\
 alias veracrypt.umount='veracrypt -d'\n\
 " >> /root/.bash_aliases
